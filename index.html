@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>بسملة ❤️ عيد ميلاد سعيد يا أجمل حاجة في حياتي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@200;300;400;600;700;800;900&family=Great+Vibes&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   💗 موقع عيد ميلاد بسملة — نسخة Black Glass Pro
+   أسود عميق + بينك زجاجي · متوافقة 100% مع iOS Safari
+═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* 🎨 للتغيير لـ بيبي بلو: بدّل السطرين دول بس
+     --pink:#7FD4FF; --pink-deep:#4DB8FF; و امسح الأزاحات الأخرى
+     أو الأفضل: غير كلاس <body> إلى "blue" ودي هتتعمل تلقائي */
+  --pink:#FF7EB9; --pink-deep:#FF4D94; --purple:#FF4D94;
+  --gold:#FFB7D5; --teal:#FF9DC6; --mint:#FFC2DC; --red:#FF6B6B;
+
+  --glass-thin:   rgba(255,255,255,.05);
+  --glass-regular:rgba(255,255,255,.08);
+  --glass-thick:  rgba(255,255,255,.13);
+  --glass-border: rgba(255,126,185,.35);
+  --glass-inner:  rgba(255,255,255,.28);
+  --glass-shadow: 0 20px 60px rgba(0,0,0,.7), inset 0 1.5px 0 var(--glass-inner), inset 0 -1px 0 rgba(255,255,255,.05);
+
+  --text:#FFF0F6; --muted:rgba(255,240,246,.62);
+  --shadow-pink:rgba(255,77,148,.5);
+  --shadow-gold:rgba(255,183,213,.4);
+
+  --spring: cubic-bezier(.32,1.4,.5,1);
+  --spring-soft: cubic-bezier(.25,.8,.25,1);
+  --ios-ease: cubic-bezier(.17,.89,.32,1);
+  --bouncy: cubic-bezier(.68,-.55,.27,1.55);
+
+  --radius-xl: 44px; --radius-lg: 34px; --radius-md: 24px; --radius-sm: 18px;
+
+  --font-ios: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+              "Cairo", "Helvetica Neue", sans-serif;
+  --font-serif: "Amiri", "Georgia", serif;
+  --font-script: "Great Vibes", cursive;
+}
+
+body.theme-blue {
+  --pink:#7FD4FF; --pink-deep:#4DB8FF; --purple:#6FC5FF;
+  --gold:#A8E4FF; --teal:#7FD4FF; --mint:#BDE9FF;
+  --glass-border: rgba(127,212,255,.35);
+  --shadow-pink:rgba(77,184,255,.5);
+  --shadow-gold:rgba(168,228,255,.4);
+  --text:#F0F9FF; --muted:rgba(240,249,255,.62);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+
+body {
+  font-family:var(--font-ios);
+  color:var(--text);
+  overflow-x:hidden; min-height:100vh; min-height:-webkit-fill-available; min-height:100dvh;
+  background:#050508;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* ✅ إصلاح iOS: خلفية ثابتة بـ position:fixed بدل background-attachment:fixed
+   (Safari على الآيفون مش بيدعم attachment:fixed وبيبوظ الخلفية) */
+body::before {
+  content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% -10%, rgba(255,77,148,.16) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 85% 110%, rgba(255,77,148,.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 45%, rgba(120,20,70,.14) 0%, transparent 70%),
+    linear-gradient(160deg,#050508 0%,#0d0510 35%,#14030d 70%,#050508 100%);
+}
+body.theme-blue::before {
+  background:
+    radial-gradient(ellipse 70% 50% at 20% -10%, rgba(77,184,255,.16) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 85% 110%, rgba(77,184,255,.12) 0%, transparent 55%),
+    linear-gradient(160deg,#050508 0%,#040810 35%,#030a14 70%,#050508 100%);
+}
+
+::selection { background:var(--pink-deep); color:#fff; }
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:var(--glass-border); border-radius:20px; }
+
+/* ─────────── الطبقات السماوية — بدون blur (✅ إصلاح الأداء على الآيفون) */
+#spaceCanvas { position:fixed; inset:0; z-index:0; pointer-events:none; transform:translateZ(0); }
+
+/* ✅ النبولات بقت radial-gradient جاهز من غير filter:blur
+   — الـ blur(100px) كان بيقف الحركات كلها على iOS */
+.nebula {
+  position:fixed; border-radius:50%; z-index:0;
+  opacity:.45; pointer-events:none; will-change:transform; transform:translateZ(0);
+}
+.nebula.n1 { width:55vw; height:55vw; top:-20vw; right:-15vw;
+  background:radial-gradient(circle, rgba(255,77,148,.25) 0%, transparent 68%);
+  animation:nebulaDrift 28s ease-in-out infinite alternate; }
+.nebula.n2 { width:48vw; height:48vw; bottom:-18vw; left:-14vw;
+  background:radial-gradient(circle, rgba(255,77,148,.2) 0%, transparent 68%);
+  animation:nebulaDrift 34s ease-in-out infinite alternate-reverse; }
+.nebula.n3 { width:36vw; height:36vw; top:40%; left:30%;
+  background:radial-gradient(circle, rgba(255,157,198,.12) 0%, transparent 68%);
+  animation:nebulaDrift 40s ease-in-out infinite alternate; }
+body.theme-blue .nebula.n1 { background:radial-gradient(circle, rgba(77,184,255,.25) 0%, transparent 68%); }
+body.theme-blue .nebula.n2 { background:radial-gradient(circle, rgba(77,184,255,.2) 0%, transparent 68%); }
+body.theme-blue .nebula.n3 { background:radial-gradient(circle, rgba(127,212,255,.12) 0%, transparent 68%); }
+@keyframes nebulaDrift {
+  from { transform:translate3d(0,0,0) scale(1); }
+  to   { transform:translate3d(-7vw,5vw,0) scale(1.18); }
+}
+
+/* ─────────── شاشة التحميل */
+#preloader {
+  position:fixed; inset:0; z-index:1000; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:30px;
+  background:#050508;
+  transition:opacity .8s var(--ios-ease), visibility .8s;
+}
+#preloader.done { opacity:0; visibility:hidden; }
+
+.pre-logo {
+  width:110px; height:110px; border-radius:32px;
+  display:flex; align-items:center; justify-content:center; font-size:56px;
+  background:linear-gradient(145deg,rgba(255,77,148,.25),rgba(255,126,185,.12));
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+  animation:prePulse 1.4s var(--spring) infinite; transform:translateZ(0);
+  box-shadow:0 0 60px var(--shadow-pink);
+}
+@keyframes prePulse {
+  0%,100% { transform:scale(1) translateZ(0); box-shadow:0 0 40px var(--shadow-pink); }
+  40%     { transform:scale(1.1) translateZ(0); box-shadow:0 0 80px var(--shadow-pink); }
+}
+.pre-name {
+  font-family:var(--font-script); font-size:44px;
+  background:linear-gradient(90deg,var(--gold),var(--pink),var(--gold));
+  background-size:300% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation:shimmer 4s linear infinite;
+}
+@keyframes shimmer { to { background-position:300% center; } }
+
+.pre-bar {
+  width:min(240px,64vw); height:6px; border-radius:20px;
+  background:rgba(255,255,255,.08); overflow:hidden;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.5);
+}
+.pre-bar i {
+  display:block; height:100%; width:0%; border-radius:20px;
+  background:linear-gradient(90deg,var(--pink-deep),var(--pink),var(--gold));
+  background-size:200% auto; animation:shimmer 2s linear infinite;
+  transition:width .35s var(--ios-ease);
+  box-shadow:0 0 14px var(--shadow-pink);
+}
+.pre-tip { font-size:13px; color:var(--muted); letter-spacing:.5px; }
+
+/* ─────────── نظام الزجاج — Black Glass ✨ */
+.glass {
+  background:var(--glass-regular);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius-lg);
+  backdrop-filter:blur(24px) saturate(170%); -webkit-backdrop-filter:blur(24px) saturate(170%);
+  box-shadow:var(--glass-shadow);
+  position:relative; transform:translateZ(0); /* ✅ إصلاح iOS: بيفعّل الـ blur */
+}
+.glass::before {
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(155deg, rgba(255,255,255,.16) 0%, transparent 30%);
+}
+
+/* حلقة التوهج — نسخة متوافقة مع iOS القديم */
+@supports (background: conic-gradient(from 0deg, red, blue)) {
+  .glow-ring::after {
+    content:""; position:absolute; inset:-2px; border-radius:inherit; z-index:-1;
+    background:conic-gradient(from 0deg,
+      transparent 0%, var(--pink-deep) 12%, var(--gold) 22%, transparent 40%,
+      transparent 55%, var(--pink-deep) 67%, var(--gold) 77%, transparent 92%);
+    animation:ringSpinSoft 8s linear infinite; opacity:.65; filter:blur(10px);
+    transform:translateZ(0);
+  }
+  @keyframes ringSpinSoft {
+    0%   { transform:rotate(0deg) translateZ(0); }
+    100% { transform:rotate(360deg) translateZ(0); }
+  }
+}
+/* Fallback ثابت لما الـ conic مش مدعوم */
+.glow-ring { box-shadow:var(--glass-shadow), 0 0 40px var(--shadow-pink); }
+
+/* ─────────── الشاشات والانتقالات */
+.screen {
+  position:fixed; inset:0; z-index:10; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; padding:24px;
+  transition:opacity .65s var(--ios-ease), transform .65s var(--spring-soft), filter .65s;
+  will-change:transform,opacity;
+}
+.screen.hidden {
+  opacity:0; transform:scale(1.1) translateZ(0); filter:blur(8px);
+  pointer-events:none; visibility:hidden;
+}
+.screen.slide-away { transform:translateY(-10vh) scale(.94) translateZ(0); filter:blur(6px); }
+.screen.zoom-in { transform:scale(1.15) translateZ(0); filter:blur(10px); }
+
+.cursor-heart {
+  position:fixed; z-index:300; pointer-events:none; font-size:16px;
+  animation:cursorFloat 1.1s var(--ios-ease) forwards; will-change:transform,opacity;
+}
+@keyframes cursorFloat {
+  from { transform:translate3d(-50%,-50%,0) scale(1); opacity:1; }
+  to   { transform:translate3d(-50%,-180%,0) scale(.3) rotate(25deg); opacity:0; }
+}
+
+/* ═══════════ شاشة القفل ═══════════ */
+#lockScreen { justify-content:flex-start; padding-top:max(8vh,60px); overflow:hidden; }
+
+.status-bar {
+  width:min(400px,92vw); display:flex; justify-content:space-between;
+  align-items:center; padding:0 12px; margin-bottom:2vh;
+  font-size:14px; font-weight:700; letter-spacing:.3px;
+}
+.status-icons { display:flex; gap:6px; align-items:center; font-size:13px; }
+
+.ios-notification {
+  width:min(400px,90vw); padding:16px 18px; margin-bottom:5vh;
+  border-radius:24px; display:flex; gap:14px; align-items:center;
+  background:var(--glass-thick);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(28px) saturate(170%); -webkit-backdrop-filter:blur(28px) saturate(170%);
+  box-shadow:0 12px 44px rgba(0,0,0,.6), inset 0 1px 0 var(--glass-inner);
+  cursor:pointer; user-select:none; transform:translateZ(0);
+  animation:notifDrop .9s var(--spring) both, notifBreathe 3s ease-in-out 1s infinite;
+  transition:transform .4s var(--spring), box-shadow .4s;
+}
+@keyframes notifDrop {
+  from { transform:translate3d(0,-90px,0) scale(.9); opacity:0; }
+  to   { transform:translate3d(0,0,0) scale(1); opacity:1; }
+}
+@keyframes notifBreathe {
+  0%,100% { box-shadow:0 12px 44px rgba(0,0,0,.6), inset 0 1px 0 var(--glass-inner); }
+  50%     { box-shadow:0 12px 60px var(--shadow-pink), inset 0 1px 0 var(--glass-inner); }
+}
+.ios-notification:active { transform:scale(.96) translateZ(0); }
+.notif-icon {
+  width:44px; height:44px; border-radius:14px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; font-size:24px;
+  background:linear-gradient(135deg,var(--pink-deep),var(--pink));
+  box-shadow:0 4px 16px var(--shadow-pink);
+}
+.notif-body { flex:1; text-align:right; }
+.notif-app { font-size:12px; font-weight:700; color:var(--muted); display:flex; justify-content:space-between; }
+.notif-title { font-size:15px; font-weight:800; margin-top:2px; }
+.notif-msg { font-size:13.5px; color:var(--muted); margin-top:1px; }
+.notif-time { font-size:11px; color:var(--muted); }
+
+.ios-clock {
+  font-size:clamp(76px,20vw,110px); font-weight:800; letter-spacing:-3px;
+  line-height:1; text-align:center; font-family:var(--font-ios);
+  font-variant-numeric:tabular-nums; color:rgba(255,255,255,.97);
+  text-shadow:0 2px 30px var(--shadow-pink);
+  animation:clockIn 1.2s var(--spring) both .2s;
+}
+@keyframes clockIn {
+  from { transform:translate3d(0,-30px,0) scale(.92); opacity:0; filter:blur(10px); }
+  to   { transform:translate3d(0,0,0) scale(1); opacity:1; filter:blur(0); }
+}
+.ios-date {
+  text-align:center; font-size:16px; font-weight:600; color:rgba(255,255,255,.9);
+  margin-top:8px; margin-bottom:5vh; animation:clockIn 1s var(--spring) both .4s;
+}
+.ios-date .heart { display:inline-block; animation:miniBeat 1.2s ease-in-out infinite; }
+@keyframes miniBeat { 0%,100%{transform:scale(1)} 30%{transform:scale(1.28)} }
+
+.swipe-hint {
+  position:absolute; bottom:max(5vh,44px); left:0; right:0;
+  text-align:center; font-size:13px; color:var(--muted); letter-spacing:1px;
+  animation:swipeFloat 2.2s ease-in-out infinite;
+}
+@keyframes swipeFloat {
+  0%,100% { transform:translateY(0); opacity:.6; }
+  50%     { transform:translateY(-8px); opacity:1; }
+}
+.swipe-hint .chevron { font-size:20px; display:block; margin-top:4px; }
+
+#passwordBox {
+  margin-top:34px; padding:38px 36px; width:min(420px,92vw);
+  text-align:center; display:none;
+  animation:cardRise .7s var(--spring) both;
+}
+@keyframes cardRise {
+  from { opacity:0; transform:translate3d(0,50px,0) scale(.88); filter:blur(6px); }
+  to   { opacity:1; transform:translate3d(0,0,0) scale(1); filter:blur(0); }
+}
+#passwordBox h2 { font-family:var(--font-serif); margin-bottom:6px; color:var(--pink); font-size:24px; }
+#passwordBox .sub { font-size:14px; color:var(--muted); margin-bottom:22px; }
+
+.pass-row { position:relative; }
+#passwordInput {
+  width:100%; padding:16px 20px; border-radius:var(--radius-sm); outline:none;
+  border:1.5px solid var(--glass-border);
+  background:rgba(255,255,255,.06); color:#fff;
+  font-size:18px; text-align:center; font-family:var(--font-ios);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); transition:.35s var(--ios-ease);
+}
+#passwordInput:focus {
+  border-color:var(--pink);
+  box-shadow:0 0 0 4px rgba(255,126,185,.18), 0 0 26px var(--shadow-pink);
+  background:rgba(255,255,255,.1);
+}
+#passwordInput::placeholder { color:rgba(255,255,255,.4); }
+
+.ios-btn {
+  padding:14px 44px; border:none; border-radius:22px; cursor:pointer;
+  font-family:var(--font-ios); font-weight:800; font-size:16px; color:#fff; letter-spacing:.3px;
+  background:linear-gradient(135deg,var(--pink-deep),var(--pink));
+  box-shadow:0 8px 26px var(--shadow-pink), inset 0 1px 0 rgba(255,255,255,.35);
+  transition:transform .35s var(--spring), box-shadow .35s;
+  position:relative; overflow:hidden; transform:translateZ(0);
+}
+.ios-btn::after {
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);
+  transform:translateX(200%); transition:transform .8s;
+}
+.ios-btn:hover { transform:translateY(-3px) scale(1.04) translateZ(0); box-shadow:0 14px 40px var(--shadow-pink); }
+.ios-btn:hover::after { transform:translateX(-200%); }
+.ios-btn:active { transform:translateY(0) scale(.95) translateZ(0); }
+
+@keyframes shake {
+  0%,100%{transform:translateX(0)} 15%{transform:translateX(-12px)}
+  35%{transform:translateX(10px)} 55%{transform:translateX(-7px)} 75%{transform:translateX(4px)}
+}
+.shaking { animation:shake .55s var(--ios-ease) !important; }
+
+/* ═══════════ شاشة الرسالة ═══════════ */
+.msg-card {
+  width:min(700px,94vw); max-height:86vh; overflow-y:auto;
+  padding:52px 44px; text-align:center;
+  animation:cardRise .8s var(--spring) both;
+  overscroll-behavior:contain; -webkit-overflow-scrolling:touch;
+}
+.msg-card::-webkit-scrollbar { width:4px; }
+.msg-card .salutation {
+  font-family:var(--font-script); font-size:58px; margin-bottom:8px;
+  background:linear-gradient(90deg,var(--gold),var(--pink),var(--gold));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.msg-card .from { font-size:13px; letter-spacing:3px; color:var(--muted); margin-bottom:30px; }
+#typedText { font-family:var(--font-serif); font-size:21px; line-height:2.3; min-height:220px; white-space:pre-wrap; text-align:center; }
+#typedText::after {
+  content:"♥"; color:var(--pink); margin-right:2px;
+  animation:cursorBlink .8s step-end infinite; font-weight:300; font-size:18px;
+}
+#typedText.done::after { content:""; }
+@keyframes cursorBlink { 50%{opacity:0} }
+
+.signature {
+  margin-top:26px; font-family:var(--font-script); font-size:36px; color:var(--pink);
+  opacity:0; transform:translateY(16px); transition:all 1.2s var(--spring);
+  text-shadow:0 0 24px var(--shadow-gold);
+}
+.signature.show { opacity:1; transform:translateY(0); }
+#enterGalleryBtn { margin-top:32px; opacity:0; pointer-events:none; transform:translateY(20px); transition:all .8s var(--spring); }
+#enterGalleryBtn.show { opacity:1; pointer-events:auto; transform:translateY(0); }
+
+/* ═══════════ المعرض ═══════════ */
+#galleryScreen { position:relative; overflow-y:auto; overflow-x:hidden; justify-content:flex-start; padding:40px 16px 130px; -webkit-overflow-scrolling:touch; }
+#galleryScreen.hidden { overflow-y:hidden; }
+
+.hero-title {
+  font-family:var(--font-script); font-size:clamp(46px,8vw,80px); text-align:center;
+  background:linear-gradient(90deg,var(--gold),var(--pink),var(--gold));
+  background-size:250% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation:shimmer 5s linear infinite; margin:20px 0 8px;
+}
+.hero-sub {
+  text-align:center; color:var(--muted); font-family:var(--font-serif);
+  font-size:clamp(15px,2.5vw,19px); margin-bottom:40px; padding:0 16px;
+}
+.hero-sub .name { color:var(--pink); font-weight:700; }
+
+.timer-wrap {
+  display:flex; gap:10px; flex-wrap:wrap; justify-content:center;
+  margin-bottom:12px; padding:26px 22px; width:min(780px,94vw);
+}
+.timer-box {
+  flex:1; min-width:96px; padding:20px 10px; border-radius:var(--radius-md);
+  text-align:center; position:relative; overflow:hidden;
+  background:linear-gradient(160deg, rgba(255,77,148,.1), rgba(255,255,255,.03));
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+  box-shadow:inset 0 1px 0 var(--glass-inner);
+  transition:transform .5s var(--spring); transform:translateZ(0);
+}
+body.theme-blue .timer-box { background:linear-gradient(160deg, rgba(77,184,255,.1), rgba(255,255,255,.03)); }
+.timer-box:active { transform:scale(.94) translateZ(0); }
+.timer-box::after {
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(120deg, transparent 30%, rgba(255,255,255,.14) 50%, transparent 70%);
+  transform:translateX(-100%); animation:sweep 5s ease infinite;
+}
+.timer-box:nth-child(2)::after { animation-delay:1.2s; }
+.timer-box:nth-child(3)::after { animation-delay:2.4s; }
+.timer-box:nth-child(4)::after { animation-delay:3.6s; }
+@keyframes sweep { to { transform:translateX(100%); } }
+.timer-box .num {
+  font-family:"Orbitron",var(--font-ios); font-size:clamp(24px,4vw,36px); font-weight:700;
+  color:var(--pink); text-shadow:0 0 22px var(--shadow-pink);
+  font-variant-numeric:tabular-nums;
+}
+.timer-box .label { font-size:12.5px; color:var(--muted); margin-top:6px; font-weight:600; }
+.timer-caption { text-align:center; font-family:var(--font-serif); font-size:16px; color:var(--muted); margin-bottom:50px; }
+.timer-caption .heart { display:inline-block; animation:miniBeat 1s ease-in-out infinite; }
+
+.love-heart-section { text-align:center; margin:20px auto 70px; width:min(600px,94vw); padding:46px 30px; }
+.love-heart-section h3 { font-family:var(--font-serif); font-size:22px; color:var(--pink); margin-bottom:22px; }
+.big-heart {
+  font-size:100px; cursor:pointer; user-select:none; display:inline-block;
+  filter:drop-shadow(0 0 36px var(--shadow-pink));
+  transition:transform .4s var(--bouncy);
+  animation:bigBeat 1.15s ease-in-out infinite; will-change:transform;
+}
+@keyframes bigBeat { 0%,100%{transform:scale(1) translateZ(0)} 35%{transform:scale(1.14) translateZ(0)} }
+.big-heart:active { transform:scale(1.35) translateZ(0) !important; animation:none; }
+.beat-count { margin-top:16px; font-size:15px; color:var(--muted); }
+.beat-count b { color:var(--pink); font-size:19px; font-variant-numeric:tabular-nums; }
+
+.section-title {
+  font-family:var(--font-script); font-size:clamp(38px,6vw,56px); text-align:center;
+  background:linear-gradient(90deg,var(--pink),var(--gold));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  margin:60px 0 10px;
+}
+.section-sub { text-align:center; color:var(--muted); margin-bottom:44px; font-size:15px; }
+
+.photo-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:36px; width:min(1100px,95vw); margin:0 auto;
+}
+.photo-card {
+  padding:16px 16px 22px; text-align:center; cursor:pointer;
+  opacity:0; transform:translate3d(0,80px,0) scale(.94) rotate(var(--tilt,0deg));
+  transition:opacity .9s var(--ios-ease), transform .9s var(--spring), box-shadow .5s;
+  will-change:transform,opacity;
+}
+.photo-card.visible { opacity:1; transform:translate3d(0,0,0) scale(1) rotate(var(--tilt,0deg)); }
+.photo-card.visible:hover {
+  transform:translateY(-10px) scale(1.04) rotate(0deg) translateZ(0) !important;
+  box-shadow:0 28px 90px var(--shadow-pink); z-index:2;
+}
+.photo-frame { position:relative; border-radius:22px; overflow:hidden; }
+.photo-card img {
+  width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:22px; display:block;
+  border:1px solid var(--glass-border);
+  box-shadow:0 10px 40px rgba(0,0,0,.6);
+  transition:transform .7s var(--spring);
+}
+.photo-card:hover img { transform:scale(1.07); }
+.photo-zoom-hint {
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  background:rgba(5,5,8,.45); opacity:0; transition:opacity .4s;
+  font-size:34px; border-radius:22px;
+}
+.photo-card:hover .photo-zoom-hint { opacity:1; }
+.photo-caption {
+  margin-top:16px; font-family:var(--font-serif); font-size:18px; line-height:1.9;
+  color:var(--pink); text-shadow:0 0 14px var(--shadow-pink);
+}
+.photo-date { margin-top:6px; font-size:11.5px; color:var(--muted); letter-spacing:2px; }
+
+/* ─────────── Lightbox ─────────── */
+#lightbox {
+  position:fixed; inset:0; z-index:400; display:none; align-items:center; justify-content:center;
+  background:rgba(0,0,0,.94);
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  flex-direction:column; gap:18px; padding:20px;
+  opacity:0; transition:opacity .4s var(--ios-ease);
+}
+#lightbox.open { display:flex; opacity:1; }
+#lightbox img {
+  max-width:92vw; max-height:72vh; border-radius:var(--radius-md);
+  border:1px solid var(--glass-border); box-shadow:0 24px 90px rgba(0,0,0,.9);
+  animation:lbZoom .5s var(--spring) both;
+  transition:transform .45s var(--spring); cursor:zoom-in; touch-action:none;
+}
+#lightbox img.zoomed { transform:scale(1.7) translateZ(0); cursor:zoom-out; }
+@keyframes lbZoom { from{transform:scale(.85) translateZ(0); opacity:0} to{transform:scale(1) translateZ(0); opacity:1} }
+#lbCaption { font-family:var(--font-serif); font-size:18px; color:var(--pink); text-align:center; max-width:90vw; }
+
+.lb-btn {
+  position:fixed; top:50%; transform:translateY(-50%) translateZ(0); z-index:410;
+  width:52px; height:52px; border-radius:50%; border:1px solid var(--glass-border);
+  background:var(--glass-thick); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  color:#fff; font-size:22px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .35s var(--spring);
+}
+.lb-btn:hover { background:rgba(255,77,148,.3); transform:translateY(-50%) scale(1.12) translateZ(0); }
+.lb-btn:active { transform:translateY(-50%) scale(.9) translateZ(0); }
+#lbPrev { right:18px; } #lbNext { left:18px; }
+#lbClose { position:fixed; top:max(20px,env(safe-area-inset-top)); left:22px; transform:none; }
+#lbClose:hover { transform:scale(1.12) rotate(90deg); }
+
+/* ─────────── الوعد والكعكة ─────────── */
+.promise-card { width:min(700px,94vw); margin:0 auto 70px; padding:42px 36px; text-align:center; }
+.promise-text { font-family:var(--font-serif); font-size:20px; line-height:2.3; }
+.promise-text b { color:var(--pink); }
+
+.cake-section { text-align:center; margin:30px auto 80px; width:min(600px,94vw); padding:48px 30px; }
+.cake-section h3 { font-family:var(--font-serif); font-size:22px; color:var(--pink); margin-bottom:8px; }
+.cake-sub { font-size:14px; color:var(--muted); margin-bottom:30px; }
+.cake {
+  font-size:112px; display:inline-block; cursor:pointer; user-select:none;
+  transition:transform .4s var(--bouncy); filter:drop-shadow(0 14px 30px rgba(0,0,0,.6));
+}
+.cake:hover { transform:scale(1.08) rotate(-3deg) translateZ(0); }
+.cake:active { transform:scale(.92) translateZ(0); }
+.cake.candles-out { animation:cakeCheer .6s ease 3; }
+@keyframes cakeCheer { 0%,100%{transform:translateY(0) translateZ(0)} 50%{transform:translateY(-16px) translateZ(0)} }
+.cake-msg {
+  margin-top:20px; font-family:var(--font-serif); font-size:18px; color:var(--pink);
+  min-height:30px; opacity:0; transform:translateY(10px); transition:all .8s var(--spring);
+}
+.cake-msg.show { opacity:1; transform:translateY(0); }
+
+.finale-btn { display:block; margin:0 auto 90px; font-size:18px; padding:17px 62px; }
+
+#finaleScreen { z-index:60; }
+.finale-card { width:min(560px,92vw); padding:60px 40px; text-align:center; animation:cardRise .8s var(--spring) both; }
+.finale-heart { font-size:84px; animation:bigBeat 1.1s ease-in-out infinite; filter:drop-shadow(0 0 44px var(--shadow-pink)); }
+.finale-title {
+  font-family:var(--font-script); font-size:54px; margin:20px 0 14px;
+  background:linear-gradient(90deg,var(--gold),var(--pink));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.finale-text { font-family:var(--font-serif); font-size:19px; line-height:2.3; }
+.finale-sig { font-family:var(--font-script); font-size:32px; color:var(--pink); margin-top:26px; }
+
+/* ═══════════ Dynamic Island ═══════════ */
+#musicWidget {
+  position:fixed; bottom:max(22px,env(safe-area-inset-bottom)); right:50%;
+  transform:translateX(50%) translateZ(0); z-index:350;
+  display:flex; align-items:center; gap:12px;
+  padding:8px; border-radius:32px;
+  background:#050508f2;
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(28px); -webkit-backdrop-filter:blur(28px);
+  box-shadow:0 16px 50px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.12), 0 0 30px rgba(255,77,148,.15);
+  cursor:pointer; overflow:hidden;
+  transition:all .6s var(--spring); will-change:width,height;
+}
+#musicWidget.collapsed { width:120px; height:36px; }
+#musicWidget.expanded { width:min(330px,88vw); height:76px; }
+#musicWidget .disc {
+  width:56px; height:56px; border-radius:50%; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; font-size:24px;
+  background:conic-gradient(from 0deg, var(--pink-deep), var(--pink), var(--gold), var(--pink-deep));
+  box-shadow:0 4px 20px var(--shadow-pink), inset 0 2px 6px rgba(255,255,255,.4);
+  transition:transform .4s var(--spring); position:relative;
+}
+#musicWidget.playing .disc { animation:spin 4s linear infinite; }
+#musicWidget.playing .disc::after {
+  content:""; position:absolute; width:14px; height:14px; border-radius:50%;
+  background:#050508;
+}
+@keyframes spin { to{transform:rotate(360deg)} }
+#musicWidget .m-info { flex:1; min-width:0; display:flex; flex-direction:column; gap:6px; }
+#musicWidget.collapsed .m-info { opacity:0; pointer-events:none; }
+#musicWidget .m-title { font-size:13px; font-weight:800; color:var(--pink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+#musicWidget .m-artist { font-size:11px; color:var(--muted); white-space:nowrap; }
+.m-row { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.m-eq { display:flex; gap:2.5px; align-items:flex-end; height:14px; }
+.m-eq i { width:3px; background:linear-gradient(var(--pink-deep),var(--gold)); border-radius:2px; animation:eq 1s ease-in-out infinite; }
+.m-eq i:nth-child(2){animation-delay:.15s} .m-eq i:nth-child(3){animation-delay:.3s} .m-eq i:nth-child(4){animation-delay:.45s}
+@keyframes eq { 0%,100%{height:4px} 50%{height:14px} }
+#musicWidget:not(.playing) .m-eq i { animation-play-state:paused; height:4px; }
+.m-progress { height:4px; border-radius:10px; background:rgba(255,255,255,.12); cursor:pointer; position:relative; overflow:hidden; }
+.m-progress i { display:block; height:100%; width:0%; border-radius:10px; background:linear-gradient(90deg,var(--pink-deep),var(--pink)); }
+
+/* ═══════════ إشعارات Toasts ═══════════ */
+.ios-toast {
+  position:fixed; top:max(18px,env(safe-area-inset-top)); left:50%; z-index:500;
+  transform:translateX(-50%) translateY(-120px) translateZ(0);
+  width:min(400px,90vw); padding:15px 18px; border-radius:24px;
+  display:flex; gap:13px; align-items:center;
+  background:var(--glass-thick);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(28px) saturate(170%); -webkit-backdrop-filter:blur(28px) saturate(170%);
+  box-shadow:0 14px 44px rgba(0,0,0,.7), inset 0 1px 0 var(--glass-inner);
+  transition:transform .7s var(--spring), opacity .5s;
+  pointer-events:none;
+}
+.ios-toast.show { transform:translateX(-50%) translateY(0) translateZ(0); }
+.ios-toast.hide { opacity:0; transform:translateX(-50%) translateY(-120px) scale(.9) translateZ(0); }
+.toast-icon {
+  width:42px; height:42px; border-radius:13px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; font-size:22px;
+  background:linear-gradient(135deg,var(--pink-deep),var(--pink));
+  box-shadow:0 4px 14px var(--shadow-pink);
+}
+.toast-body { flex:1; text-align:right; }
+.toast-title { font-size:14.5px; font-weight:800; }
+.toast-msg { font-size:13px; color:var(--muted); margin-top:1px; }
+
+#giftBtn {
+  position:fixed; bottom:max(24px,env(safe-area-inset-bottom)); left:24px; z-index:350;
+  width:58px; height:58px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font-size:26px;
+  cursor:pointer; background:var(--glass-thick); border:1px solid var(--glass-border);
+  backdrop-filter:blur(24px) saturate(170%); -webkit-backdrop-filter:blur(24px) saturate(170%);
+  box-shadow:0 8px 30px rgba(0,0,0,.6), inset 0 1px 0 var(--glass-inner);
+  transition:transform .4s var(--bouncy); transform:translateZ(0);
+  animation:giftWiggle 3s ease-in-out infinite;
+}
+@keyframes giftWiggle {
+  0%,100%{transform:rotate(0) translateZ(0)} 8%{transform:rotate(-14deg) scale(1.05) translateZ(0)}
+  16%{transform:rotate(14deg) translateZ(0)} 24%{transform:rotate(-8deg) translateZ(0)} 32%{transform:rotate(0) translateZ(0)}
+}
+#giftBtn:hover { transform:scale(1.18) translateZ(0); animation-play-state:paused; }
+#giftBtn:active { transform:scale(.85) translateZ(0); }
+
+.confetti { position:fixed; top:-10vh; z-index:200; pointer-events:none; font-size:24px; animation:fall linear forwards; will-change:transform,opacity; }
+@keyframes fall { to { transform:translate3d(0,118vh,0) rotate(720deg); opacity:.4; } }
+
+#iosNav {
+  position:fixed; bottom:max(20px,env(safe-area-inset-bottom)); left:50%;
+  transform:translateX(-50%) translateZ(0); z-index:340;
+  display:none; gap:4px; padding:5px; border-radius:28px;
+  background:var(--glass-thick); border:1px solid var(--glass-border);
+  backdrop-filter:blur(28px) saturate(170%); -webkit-backdrop-filter:blur(28px) saturate(170%);
+  box-shadow:0 10px 40px rgba(0,0,0,.6), inset 0 1px 0 var(--glass-inner);
+}
+#iosNav.show { display:flex; }
+.nav-pill {
+  padding:11px 22px; border-radius:22px; border:none; cursor:pointer;
+  background:transparent; color:var(--muted);
+  font-family:var(--font-ios); font-size:14px; font-weight:700;
+  transition:all .45s var(--spring); white-space:nowrap;
+}
+.nav-pill.active {
+  background:linear-gradient(135deg,var(--pink-deep),var(--pink));
+  color:#fff; box-shadow:0 4px 16px var(--shadow-pink);
+}
+.nav-pill:active { transform:scale(.92); }
+
+#iosCursor {
+  position:fixed; z-index:900; width:8px; height:8px; border-radius:50%;
+  background:var(--pink); pointer-events:none; mix-blend-mode:normal;
+  transition:transform .15s var(--ios-ease), opacity .3s; opacity:0;
+  box-shadow:0 0 10px var(--shadow-pink);
+}
+
+/* ═══════════ الريسبونسيف ═══════════ */
+@media (max-width:600px) {
+  .msg-card { padding:36px 22px; }
+  .msg-card .salutation { font-size:44px; }
+  #typedText { font-size:17.5px; min-height:190px; }
+  .timer-box { min-width:70px; padding:14px 6px; }
+  .photo-grid { grid-template-columns:1fr; gap:28px; }
+  .big-heart { font-size:78px; }
+  .lb-btn { width:44px; height:44px; font-size:18px; }
+  #iosNav .nav-pill { padding:10px 16px; font-size:13px; }
+  .promise-text, .finale-text { font-size:17px; }
+  .cake { font-size:96px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<div id="preloader">
+  <div class="pre-logo">💖</div>
+  <div class="pre-name">𝒃𝒂𝒔𝒃𝒐𝒔𝒂 &nbsp;♡&nbsp; 𝒏𝒂𝒅𝒆𝒓</div>
+  <div class="pre-bar"><i id="preFill"></i></div>
+  <div class="pre-tip">استني يابسبوستي بتحمل..</div>
+</div>
+
+<canvas id="spaceCanvas"></canvas>
+<div class="nebula n1"></div>
+<div class="nebula n2"></div>
+<div class="nebula n3"></div>
+
+<div class="screen" id="lockScreen">
+  <div class="status-bar">
+    <span id="sbTime">9:41</span>
+    <div class="status-icons"><span>📶</span><span>🔋</span><span>💗</span></div>
+  </div>
+
+  <div class="ios-notification" id="msgIcon" role="button" tabindex="0">
+    <div class="notif-icon">💌</div>
+    <div class="notif-body">
+      <div class="notif-app"><span>𝒏𝒂𝒅𝒆𝒓 🤍</span><span class="notif-time">الآن</span></div>
+      <div class="notif-title">افتحي ارساله يعيوني</div>
+      <div class="notif-msg">انا بحبك وبعشقك وبدمنك وبموت فيكي ................ 😍 </div>
+    </div>
+  </div>
+
+  <div class="ios-clock" id="iosClock">9:41</div>
+  <div class="ios-date" id="iosDate">الجمعة ٣٠ أكتوبر <span class="heart">💗</span></div>
+
+  <div id="passwordBox" class="glass glow-ring">
+    <h2>𝒃𝒂𝒔𝒔𝒘𝒐𝒓𝒅 𝒃𝒂𝒔𝒃𝒐𝒔𝒕𝒚 🔐</h2>
+    <div class="sub">مين شريكة حياة نادر؟...</div>
+    <div class="pass-row">
+      <input type="password" id="passwordInput" placeholder="𝒑𝒂𝒔𝒔𝒘𝒐𝒓𝒅 𝒃𝒂𝒔𝒃𝒐𝒔𝒕𝒚𝒚 ..." autocomplete="off">
+    </div>
+    <br>
+    <button id="passwordBtn" class="ios-btn">افتحي ياروح قلبي 🎀</button>
+    <div id="errorMsg" style="margin-top:14px; color:#ff9db6; font-size:14px; display:none;"></div>
+    <div id="attemptsLeft" style="margin-top:6px; font-size:12px; color:var(--muted);"></div>
+  </div>
+
+  <div class="swipe-hint" id="swipeHint">افتحي الرسالة<span class="chevron">⌃</span></div>
+</div>
+
+<div class="screen hidden" id="messageScreen">
+  <div class="msg-card glass glow-ring">
+    <div class="salutation">حبيبتي كبرت سنه  🌹</div>
+    <div class="from">— كل كلمة من قلبي ياكل حياتي —</div>
+    <div id="typedText"></div>
+    <div class="signature" id="signature">𝒏𝒂𝒅𝒆𝒓 ♡ 𝒃𝒂𝒔𝒃𝒐𝒔𝒂𝒂</div>
+    <button id="enterGalleryBtn" class="ios-btn">تعالي هنا عشان بحبك 😉🎀</button>
+  </div>
+</div>
+
+<div class="screen hidden" id="galleryScreen">
+  <h1 class="hero-title">اجمل بنوته في حياتي كبرة سنه  🎂</h1>
+  <p class="hero-sub">انا وانتي اليوم مع بعض بي سنه يا اجمل حاجه حصلتلي في دنيا <span class="name">بحبك اوي</span> 💫</p>
+
+  <div class="timer-wrap glass">
+    <div class="timer-box"><div class="num" id="dNum">0</div><div class="label">days</div></div>
+    <div class="timer-box"><div class="num" id="hNum">0</div><div class="label">hour</div></div>
+    <div class="timer-box"><div class="num" id="mNum">0</div><div class="label">minute</div></div>
+    <div class="timer-box"><div class="num" id="sNum">0</div><div class="label">second</div></div>
+  </div>
+  <p class="timer-caption">مكملين مع بعض <span class="heart">❤️</span>  لي لابد يانصي التاني حبيت اوي 🥹🎀</p>
+
+  <div class="love-heart-section glass glow-ring">
+    <h3> المسي القلب... كدا بس براحه عشان بيدق  🥹 💓</h3>
+    <div class="big-heart" id="bigHeart">❤️</div>
+    <div class="beat-count">𝒍𝒐𝒗𝒆 𝒚𝒐𝒖 <b id="beatCount">0</b> 𝒃𝒂𝒔𝒃𝒐𝒔𝒕𝒚.. 𝒎𝒚 𝒉𝒆𝒂𝒓𝒕 𝒔𝒐𝒖𝒍  </b></div>
+  </div>
+
+  <h2 class="section-title">يومآ ما انا و قرة عيني  ✨</h2>
+  <p class="section-sub">ربنا يخليكي ليا و ميحرمنيش منك ابدا ياكل حاجه في حياتي </p>
+  <div class="photo-grid" id="photoGrid"></div>
+
+  <h2 class="section-title">وعد مني ياقلب حبيبك 💍</h2>
+  <div class="promise-card glass">
+    <p class="promise-text">
+      أنا <b>بوعدك</b>، يا <b>بنوتي</b>...<br>
+      انا مش هبعد عنك مهمل حصل مقدرش ازعلك مقدرش ابعد عنك عايزك تكوني اجمل بنوته في دنيا ياست البنات  <br>
+      مهما يحصل اي حاجه بينا مش هسيبك هفضل جمبك سندك ضهرك حماكي كل حاجة ليكي انتي نصي تاني و شريكة حيات<br>
+      في كلام كتير جوايا مش قادر اوصفو ليكي ربنا يخليكي ليا يانور عيني و كل سنه وانا وانتي مع بعض و كل عيد و انتي عيدي ياقرة عيني  🥹🎀💗
+    </p>
+  </div>
+
+  <div class="cake-section glass glow-ring">
+    <h3>دوسي علي تورته يا  اميرتي 🎂</h3>
+    <div class="cake-sub">كل سنه وانتي معايا كل سنه وانتي مراتي كل سنه وانتي كل حاجة ليا </div>
+    <div class="cake" id="cake">🎂</div>
+    <div class="cake-msg" id="cakeMsg"></div>
+  </div>
+
+  <button class="ios-btn finale-btn" id="finaleBtn">𝒃𝒂𝒔𝒃𝒐𝒔𝒆𝒕 𝒏𝒂𝒅𝒆𝒓... 🎁✨</button>
+</div>
+
+<div class="screen hidden" id="finaleScreen">
+  <div class="finale-card glass glow-ring">
+    <div class="finale-heart">💖</div>
+    <div class="finale-title">بحبك يا اجمل حاجه حصلتلي في ادنيا </div>
+    <p class="finale-text">
+ "موزتي و فردتي وحته مني"
+كل عام وأنتي عيدي كل عام وأنتي سندي كل عام وأنتي فرحتي
+  <br>
+  كل عام وأنتي أمنيتي كل عام وأنتي ضحكتي كل عام وأنتي حبيبتي
+  .<br>
+      كل عام وأنتي قلبي
+كل عام وأنتي عافيتي كل عام وأنتي عالمي <br>
+      <b style="color:var(--pink)">انا من كتر حبي ليكي مش قادر اوصفو يا اميرتي 🥹</b>
+    </p>
+    <div class="finale-sig">حبيبك للأبد — 𝒏𝒂𝒅𝒆𝒓 ♡</div>
+  </div>
+</div>
+
+<div id="lightbox">
+  <button class="lb-btn" id="lbClose">✕</button>
+  <button class="lb-btn" id="lbPrev">›</button>
+  <button class="lb-btn" id="lbNext">‹</button>
+  <img id="lbImg" src="" alt="ذكرى">
+  <div id="lbCaption"></div>
+</div>
+
+<div id="musicWidget" class="collapsed" title="شغّلي الأغنية 🎵">
+  <div class="disc" id="discBtn">🎵</div>
+  <div class="m-info">
+    <div class="m-row">
+      <div style="min-width:0;">
+        <div class="m-title">أغنيتنا 💕</div>
+        <div class="m-artist">𝒃𝒂𝒔𝒃𝒐𝒔𝒂 &amp; 𝒏𝒂𝒅𝒆𝒓</div>
+      </div>
+      <div class="m-eq"><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="m-progress" id="mProgress"><i id="mFill"></i></div>
+  </div>
+</div>
+
+<div id="iosNav">
+  <button class="nav-pill active" data-goto="start">🔒 البداية</button>
+  <button class="nav-pill" data-goto="heart">💓 القلب</button>
+  <button class="nav-pill" data-goto="photos">📸 لحظاتنا</button>
+  <button class="nav-pill" data-goto="cake">🎂 الكعكة</button>
+</div>
+
+<div id="giftBtn" title="𝒍𝒐𝒗𝒆 𝒚𝒐𝒖 🎁">🎁</div>
+
+<audio id="bgMusic" src="AUD-20261029-WA0010.mp3" loop preload="auto"></audio>
+
+<script>
+"use strict";
+/* ═══════════════ الإعدادات — عدّل هنا فقط ═══════════════ */
+const PASSWORD   = "بسملة";
+const LOVE_START = new Date("2026-09-03T00:00:00");
+const BIRTHDAY   = "2026-11-1";
+const THEME      = "pink"; /* 👈 غيّرها لـ "blue" لو عايز أسود وبيبي بلو */
+
+const MESSAGE =
+`𝓱𝓪𝓹𝓹𝔂 𝓑𝓲𝓻𝓽𝓱𝓭𝓪𝔂 𝒃𝒂𝒔𝒃𝒐𝒔𝒕𝒚𝒚♥🎂
+
+اللهم اني رضيت بها رفيقة للدرب..وانسية لروحي ..وشريكة للعمر 
+اليوم ازدادت عاماً ولم يزيد عمرها إلا جمالاً
+
+ اللهم إني استودعتڪ عاماً مضى من عمرها وعاماً قادم
+. حبيبتي وقرة عيني 👑💍 🌏🫂 🦋♥
+ 
+كل سنه وانتي في قلبي♥✋
+كل سنه وانتي معايا🫂
+
+كل سنه ونتي حياتي كلها♥♥
+كل سنه ونتي منوره دنيتي كلها🙈😍
+
+كل سنه ونتي حبك بقلبي بيزيد♥🫶
+وكل سنه ونتي جمبي ♥♥🎂🎂
+
+كل سنه وانتي سنديي 🫶
+ ربنا يخليكي ليا و. ميحرمنيش منك ابدا ياقرة عيني 
+ربنا يبعد عنك كل شر ويباركلى فيكي  👑🙈
+ربنا يديمك نعمه فى حياتى طول العمر ♥️♥️`;
+
+const PHOTOS = [
+  { src:"IMG-20261030-WA0007.jpg", caption:"✦ انا وانتي يوما ما ياروح قلبي ✦", date:"بداية الحكاية" },
+  { src:"IMG-20261030-WA0008.jpg", caption:"✦ ضحكتك دي... أجمل موسيقى سمعتها في حياتي ✦", date:"ذكرى مش هتنساها" },
+  { src:"IMG-20261030-WA0009.jpg", caption:"✦ كل لقطة معاكي ذكرى تستاهل تتحفظ في ذهب ✦", date:"لحظة سعادة" },
+  { src:"IMG-20261030-WA0010.jpg", caption:"✦ يا رب كل سنة وانتي جنبك... وأنا جنبك ✦", date:"دايمًا مع بعض" },
+  { src:"IMG-20261030-WA0011.jpg", caption:"✦ حبيبتي... عيد ميلاد سعيد يا أجمل هدية في حياتي ✦", date:"اليوم بتاعك 🎂" },
+  { src:"IMG-20261030-WA0012.jpg", caption:"✦ وأخر حاجة... أنا مش هسيب إيدك أبدًا ✦", date:"للأبد ♡" }
+];
+
+const GIFTS = [
+  `🎁 حبيتك اوي: هنفضل مع بعض ديما 🤍`,
+  `🌹 عشقتك و مش بقدر ابعد عنك ثانيه`,
+  `✨ لو قارنو اي حاجه في دنيا بيكي اسيب ادنيا كلها و اجيلك`,
+  `💌 انتي خدتي كل حاجة فيا روحي دايبه في روحك  ❤️`,
+  `🌟 𝒃𝒂𝒔𝒃𝒐𝒔𝒕𝒚... أنتِ النجمة اللي ظلت نور عيني`,
+  `💍 كلها كام سنه و هاخدك و نحتفل في بيتنا 🥹`
+];
+
+/* تطبيق الثيم */
+if (THEME === "blue") document.body.classList.add("theme-blue");
+
+const $ = id => document.getElementById(id);
+const rnd = (a,b) => a + Math.random()*(b-a);
+
+/* ═══════════ 0) شاشة التحميل ═══════════ */
+const preFill = $("preFill");
+let preP = 0;
+const preTimer = setInterval(() => {
+  preP = Math.min(100, preP + rnd(8,22));
+  preFill.style.width = preP + "%";
+  if (preP >= 100) {
+    clearInterval(preTimer);
+    setTimeout(() => { $("preloader").classList.add("done"); startIOSClock(); }, 450);
+  }
+}, 170);
+
+/* ═══════════ 1) ساعة القفل ═══════════ */
+function startIOSClock() {
+  const now = new Date();
+  const hh = String(now.getHours()).padStart(2,"0");
+  const mm = String(now.getMinutes()).padStart(2,"0");
+  $("iosClock").textContent = `${hh}:${mm}`;
+  $("sbTime").textContent = `${hh}:${mm}`;
+  const days = ["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+  const months = ["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+  const heartEmoji = THEME === "blue" ? "💙" : "💗";
+  $("iosDate").innerHTML = `${days[now.getDay()]} ${now.getDate()} ${months[now.getMonth()]} <span class="heart">${heartEmoji}</span>`;
+  setTimeout(startIOSClock, 10000);
+}
+
+/* ═══════════ 2) خلفية الكون ═══════════ */
+const sc = $("spaceCanvas"), sctx = sc.getContext("2d");
+let SW, SH, stars = [], shooting = [];
+function spaceResize() {
+  SW = sc.width = innerWidth; SH = sc.height = innerHeight;
+  stars = Array.from({length: Math.min(200, (SW*SH)/8500)}, () => ({
+    x: Math.random()*SW, y: Math.random()*SH,
+    r: Math.random()*1.6 + .3, a: Math.random(),
+    tw: Math.random()*.04 + .01
+  }));
+}
+spaceResize(); addEventListener("resize", spaceResize);
+
+(function drawSpace() {
+  sctx.clearRect(0,0,SW,SH);
+  const accent = THEME === "blue" ? "127,212,255" : "255,126,185";
+  for (const s of stars) {
+    s.a += s.tw;
+    const alpha = .35 + Math.abs(Math.sin(s.a))*.65;
+    sctx.globalAlpha = alpha; sctx.fillStyle = "#fff";
+    sctx.beginPath(); sctx.arc(s.x, s.y, s.r, 0, 7); sctx.fill();
+    if (s.r > 1.2) {
+      sctx.globalAlpha = alpha*.3;
+      sctx.beginPath(); sctx.arc(s.x, s.y, s.r*3, 0, 7); sctx.fill();
+    }
+  }
+  if (Math.random() < .005 && shooting.length < 2) {
+    shooting.push({ x: Math.random()*SW, y: -20, vx: rnd(4,8), vy: rnd(5,8), life: 1 });
+  }
+  shooting = shooting.filter(sh => sh.life > 0);
+  for (const sh of shooting) {
+    sctx.globalAlpha = sh.life;
+    const grad = sctx.createLinearGradient(sh.x, sh.y, sh.x - sh.vx*10, sh.y - sh.vy*10);
+    grad.addColorStop(0, `rgba(${accent},.95)`);
+    grad.addColorStop(1, `rgba(${accent},0)`);
+    sctx.strokeStyle = grad; sctx.lineWidth = 2.2;
+    sctx.beginPath(); sctx.moveTo(sh.x, sh.y);
+    sctx.lineTo(sh.x - sh.vx*10, sh.y - sh.vy*10); sctx.stroke();
+    sh.x += sh.vx; sh.y += sh.vy; sh.life -= .016;
+  }
+  sctx.globalAlpha = 1;
+  requestAnimationFrame(drawSpace);
+})();
+
+/* ═══════════ 3) قلوب الماوس ═══════════ */
+const heartEmojis = THEME === "blue" ? ["💙","🩵","✨","💫"] : ["💗","💖","✨","💜"];
+let lastHeart = 0;
+function spawnCursorHeart(x, y) {
+  const now = Date.now();
+  if (now - lastHeart < 80) return;
+  lastHeart = now;
+  const h = document.createElement("div");
+  h.className = "cursor-heart";
+  h.textContent = heartEmojis[Math.floor(Math.random()*heartEmojis.length)];
+  h.style.left = x+"px"; h.style.top = y+"px";
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 1150);
+}
+addEventListener("mousemove", e => spawnCursorHeart(e.clientX, e.clientY));
+addEventListener("touchmove", e => {
+  const t = e.touches[0];
+  if (t) spawnCursorHeart(t.clientX, t.clientY);
+}, { passive:true });
+
+/* ═══════════ 4) شاشة القفل ═══════════ */
+const msgIcon = $("msgIcon"), passwordBox = $("passwordBox"),
+      passInput = $("passwordInput"), passBtn = $("passwordBtn"),
+      errorMsg = $("errorMsg"), attemptsEl = $("attemptsLeft");
+let attempts = 0;
+
+function openNotification() {
+  passwordBox.style.display = "block";
+  $("swipeHint").style.display = "none";
+  msgIcon.style.animation = "none";
+  setTimeout(() => passInput.focus(), 350);
+  heartsBurst(14);
+  playPop();
+}
+msgIcon.addEventListener("click", openNotification);
+msgIcon.addEventListener("keydown", e => { if (e.key==="Enter") openNotification(); });
+
+function tryUnlock() {
+  if (passInput.value.trim() === PASSWORD) {
+    errorMsg.style.display = "none";
+    attemptsEl.textContent = "";
+    unlockToMessage();
+  } else {
+    attempts++;
+    errorMsg.style.display = "block";
+    errorMsg.textContent = [
+      "مش صح يا قمر... فكري تاني 😉",
+      "لأ... الحل باسم أجمل بنت في الدنيا 💡",
+      "قربتي... اهو مش صعب 😄"
+    ][Math.min(attempts-1, 2)];
+    passwordBox.classList.remove("shaking");
+    void passwordBox.offsetWidth;
+    passwordBox.classList.add("shaking");
+    heartsBurst(4, THEME === "blue" ? "127,212,255" : "255,107,138");
+    playError();
+  }
+}
+passBtn.addEventListener("click", tryUnlock);
+passInput.addEventListener("keydown", e => { if (e.key==="Enter") tryUnlock(); });
+
+/* ═══════════ 5) الرسالة ═══════════ */
+const lockScreen = $("lockScreen"), messageScreen = $("messageScreen"),
+      typedText = $("typedText"), signature = $("signature"),
+      enterGalleryBtn = $("enterGalleryBtn");
+
+function unlockToMessage() {
+  lockScreen.classList.add("slide-away");
+  setTimeout(() => { lockScreen.classList.add("hidden"); lockScreen.classList.remove("slide-away"); }, 750);
+  messageScreen.classList.remove("hidden");
+  $("iosNav").classList.remove("show");
+  startMusic();
+  launchConfetti(45);
+  heartsBurst(22);
+  typeMessage();
+  playSuccess();
+}
+
+function typeMessage() {
+  let i = 0;
+  (function tick() {
+    if (i <= MESSAGE.length) {
+      typedText.textContent = MESSAGE.slice(0, i);
+      const ch = MESSAGE[i-1];
+      i++;
+      setTimeout(tick, ch === "\n" ? 380 : (ch==="،"||ch==="." ? 280 : 36));
+    } else {
+      typedText.classList.add("done");
+      signature.classList.add("show");
+      setTimeout(() => enterGalleryBtn.classList.add("show"), 900);
+      launchConfetti(18);
+    }
+  })();
+}
+
+enterGalleryBtn.addEventListener("click", () => {
+  messageScreen.classList.add("slide-away");
+  setTimeout(() => {
+    messageScreen.classList.add("hidden");
+    messageScreen.classList.remove("slide-away");
+    const g = $("galleryScreen");
+    g.classList.remove("hidden");
+    document.body.style.overflowY = "auto";
+    $("iosNav").classList.add("show");
+    showToast("𝒃𝒂𝒔𝒃𝒐𝒔𝒕𝒚 💫", "انا وانتي يومآ ما ياروح قلبي 🤍");
+  }, 650);
+  launchConfetti(38);
+});
+
+/* ═══════════ 6) المعرض ═══════════ */
+const grid = $("photoGrid");
+PHOTOS.forEach((ph, i) => {
+  const card = document.createElement("div");
+  card.className = "photo-card glass";
+  card.style.setProperty("--tilt", ((i%2 ? 1 : -1) * rnd(1.2,2.8))+"deg");
+  card.style.transitionDelay = (i*90)+"ms";
+  card.innerHTML = `
+    <div class="photo-frame">
+      <img src="${ph.src}" alt="ذكرى ${i+1}" loading="lazy"
+           onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=700&q=80'">
+      <div class="photo-zoom-hint">🔍</div>
+    </div>
+    <div class="photo-caption">${ph.caption}</div>
+    <div class="photo-date">${ph.date || ""}</div>`;
+  card.addEventListener("click", () => openLightbox(i));
+  grid.appendChild(card);
+});
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+}, { threshold:.12 });
+document.querySelectorAll(".photo-card").forEach(c => io.observe(c));
+
+const lightbox = $("lightbox"), lbImg = $("lbImg"), lbCaption = $("lbCaption");
+let lbIndex = 0, touchStartX = 0;
+
+function openLightbox(i) {
+  lbIndex = i; updateLB();
+  lightbox.classList.add("open");
+  document.body.style.overflow = "hidden";
+  playPop();
+}
+function updateLB() {
+  lbImg.style.animation = "none"; void lbImg.offsetWidth; lbImg.style.animation = "";
+  lbImg.src = PHOTOS[lbIndex].src;
+  lbImg.classList.remove("zoomed");
+  lbCaption.textContent = PHOTOS[lbIndex].caption;
+}
+function closeLightbox() {
+  lightbox.classList.remove("open");
+  document.body.style.overflow = "auto";
+}
+function lbStep(d) {
+  lbIndex = (lbIndex + d + PHOTOS.length) % PHOTOS.length;
+  updateLB();
+}
+$("lbClose").onclick = closeLightbox;
+$("lbPrev").onclick = () => lbStep(1);
+$("lbNext").onclick = () => lbStep(-1);
+lbImg.addEventListener("click", () => { lbImg.classList.toggle("zoomed"); playPop(); });
+lightbox.addEventListener("click", e => { if (e.target === lightbox) closeLightbox(); });
+lbImg.addEventListener("touchstart", e => { touchStartX = e.touches[0].clientX; }, { passive:true });
+lbImg.addEventListener("touchend", e => {
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  if (Math.abs(dx) > 50) lbStep(dx > 0 ? -1 : 1);
+}, { passive:true });
+document.addEventListener("keydown", e => {
+  if (!lightbox.classList.contains("open")) return;
+  if (e.key === "Escape") closeLightbox();
+  if (e.key === "ArrowLeft") lbStep(-1);
+  if (e.key === "ArrowRight") lbStep(1);
+});
+
+/* ═══════════ 7) عداد الوقت ═══════════ */
+function updateTimer() {
+  let diff = Math.max(0, Date.now() - LOVE_START.getTime());
+  const d = Math.floor(diff/86400000); diff %= 86400000;
+  const h = Math.floor(diff/3600000);  diff %= 3600000;
+  const m = Math.floor(diff/60000);
+  const s = Math.floor((diff%60000)/1000);
+  $("dNum").textContent = d.toLocaleString("ar-EG");
+  $("hNum").textContent = String(h).padStart(2,"0");
+  $("mNum").textContent = String(m).padStart(2,"0");
+  $("sNum").textContent = String(s).padStart(2,"0");
+}
+setInterval(updateTimer, 1000); updateTimer();
+
+/* ═══════════ 8) القلب النابض ═══════════ */
+const bigHeart = $("bigHeart");
+let beats = 0;
+bigHeart.addEventListener("click", () => {
+  beats++;
+  $("beatCount").textContent = beats;
+  bigHeart.style.transform = "scale(1.4)";
+  setTimeout(() => bigHeart.style.transform = "", 200);
+  heartsBurst(7);
+  vibrate(15);
+  playPop();
+  if (beats % 10 === 0) launchConfetti(12);
+  if (beats === 20) showToast("💗 إشعار من القلب", "مرتاح وانتي بتلمسي قلبي اوي بحبك 🥹 💗");
+});
+
+/* ═══════════ 9) الكعكة ═══════════ */
+const cake = $("cake"), cakeMsg = $("cakeMsg");
+let candlesOut = false;
+cake.addEventListener("click", () => {
+  if (candlesOut) return;
+  candlesOut = true;
+  cake.classList.add("candles-out");
+  cakeMsg.textContent = "🕯️𝒍𝒐𝒗𝒆 𝒚𝒐𝒖 𝒍𝒐𝒗𝒆 𝒚𝒐𝒖 𝒍𝒐𝒗𝒆 𝒚𝒐𝒖 𝒍𝒐𝒗𝒆 𝒚𝒐𝒖 🤍";
+  cakeMsg.classList.add("show");
+  launchConfetti(70);
+  heartsBurst(26);
+  vibrate([30,60,30]);
+  playChime();
+  showToast("🎂 ربنا يخليكي ليا ياست البنات ", "وميحرمنيش منك ابدا ياشريكة حياتي ياثكرررررررر حبيتت  🤍");
+});
+
+/* ═══════════ 10) الختام ═══════════ */
+$("finaleBtn").addEventListener("click", () => {
+  $("galleryScreen").classList.add("slide-away");
+  setTimeout(() => {
+    $("galleryScreen").classList.add("hidden");
+    $("galleryScreen").classList.remove("slide-away");
+    $("finaleScreen").classList.remove("hidden");
+    $("iosNav").classList.remove("show");
+    document.body.style.overflow = "hidden";
+  }, 650);
+  launchConfetti(90);
+  heartsBurst(32);
+  playChime();
+});
+
+/* ═══════════ 11) الموسيقى — Dynamic Island ═══════════ */
+const bgMusic = $("bgMusic"), musicWidget = $("musicWidget"),
+      discBtn = $("discBtn"), mProgress = $("mProgress"), mFill = $("mFill");
+let musicStarted = false, islandExpanded = false;
+
+function setPlayingUI(on) {
+  musicWidget.classList.toggle("playing", on);
+  discBtn.textContent = on ? "🎶" : "🎵";
+}
+function expandIsland() {
+  islandExpanded = true;
+  musicWidget.classList.remove("collapsed");
+  musicWidget.classList.add("expanded");
+}
+function collapseIsland() {
+  islandExpanded = false;
+  musicWidget.classList.remove("expanded");
+  musicWidget.classList.add("collapsed");
+}
+function startMusic() {
+  expandIsland();
+  bgMusic.play().then(() => { musicStarted = true; setPlayingUI(true); })
+  .catch(() => {
+    const once = () => {
+      if (!musicStarted) bgMusic.play().then(() => { musicStarted = true; setPlayingUI(true); }).catch(()=>{});
+    };
+    document.addEventListener("click", once, { once:true });
+  });
+}
+discBtn.addEventListener("click", e => {
+  e.stopPropagation();
+  if (bgMusic.paused) { bgMusic.play(); setPlayingUI(true); }
+  else { bgMusic.pause(); setPlayingUI(false); }
+});
+musicWidget.addEventListener("click", e => {
+  if (e.target === discBtn) return;
+  islandExpanded ? collapseIsland() : expandIsland();
+});
+bgMusic.addEventListener("timeupdate", () => {
+  if (bgMusic.duration) mFill.style.width = (bgMusic.currentTime/bgMusic.duration*100)+"%";
+});
+mProgress.addEventListener("click", e => {
+  e.stopPropagation();
+  const r = mProgress.getBoundingClientRect();
+  if (bgMusic.duration) bgMusic.currentTime = ((e.clientX-r.left)/r.width)*bgMusic.duration;
+});
+
+/* ═══════════ 12) قلوب طائرة ═══════════ */
+const hCanvas = document.createElement("canvas");
+hCanvas.style.cssText = "position:fixed;inset:0;z-index:1;pointer-events:none;transform:translateZ(0);";
+document.body.appendChild(hCanvas);
+const hctx = hCanvas.getContext("2d");
+let W, H, hearts = [];
+function resizeHearts() { W = hCanvas.width = innerWidth; H = hCanvas.height = innerHeight; }
+resizeHearts(); addEventListener("resize", resizeHearts);
+
+function spawnHeart() {
+  const hue = THEME === "blue"
+    ? (Math.random()>.5 ? "127,212,255" : "77,184,255")
+    : (Math.random()>.5 ? "255,126,185" : "255,77,148");
+  hearts.push({
+    x: Math.random()*W, y: H+20,
+    s: rnd(8,22), v: rnd(.6,2), drift: rnd(-.6,.6),
+    o: rnd(.2,.75), hue, vx: 0
+  });
+}
+(function drawHearts() {
+  hctx.clearRect(0,0,W,H);
+  if (Math.random()<.07) spawnHeart();
+  hearts = hearts.filter(h => h.y > -40 && h.o > 0);
+  for (const h of hearts) {
+    h.y -= h.v; h.x += h.drift + h.vx;
+    h.vx *= .95;
+    hctx.globalAlpha = h.o;
+    hctx.fillStyle = `rgba(${h.hue},1)`;
+    const x=h.x, y=h.y, s=h.s/12;
+    hctx.beginPath();
+    hctx.moveTo(x, y+4*s);
+    hctx.bezierCurveTo(x-6*s, y-2*s, x-4*s, y-8*s, x, y-4*s);
+    hctx.bezierCurveTo(x+4*s, y-8*s, x+6*s, y-2*s, x, y+4*s);
+    hctx.fill();
+  }
+  hctx.globalAlpha = 1;
+  requestAnimationFrame(drawHearts);
+})();
+
+function heartsBurst(n, hue) {
+  const fallback = THEME === "blue"
+    ? (Math.random()>.5 ? "127,212,255" : "168,228,255")
+    : (Math.random()>.5 ? "255,126,185" : "255,183,213");
+  for (let i=0;i<n;i++) {
+    hearts.push({
+      x: innerWidth/2 + rnd(-130,130),
+      y: innerHeight/2 + rnd(-70,70),
+      s: rnd(12,28), v: rnd(2,5), drift: rnd(-1.6,1.6),
+      o: .9, hue: hue || fallback,
+      vx: rnd(-2,2)
+    });
+  }
+}
+
+/* ═══════════ 13) الكونفيتي + Toasts ═══════════ */
+function launchConfetti(count = 25) {
+  const emojis = THEME === "blue" ? ["💙","🩵","✨","💫","🎉","🤍","🎂"] : ["❤️","💖","✨","🌹","🎉","💜","🎂"];
+  for (let i=0;i<count;i++) {
+    const el = document.createElement("div");
+    el.className = "confetti";
+    el.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left = Math.random()*100+"vw";
+    el.style.fontSize = rnd(18,32)+"px";
+    el.style.animationDuration = rnd(3,7)+"s";
+    el.style.animationDelay = rnd(0,2)+"s";
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 9000);
+  }
+}
+
+function showToast(title, msg) {
+  const old = document.querySelector(".ios-toast");
+  if (old) old.remove();
+  const t = document.createElement("div");
+  t.className = "ios-toast";
+  t.innerHTML = `
+    <div class="toast-icon">🎁</div>
+    <div class="toast-body">
+      <div class="toast-title">${title}</div>
+      <div class="toast-msg">${msg}</div>
+    </div>`;
+  document.body.appendChild(t);
+  requestAnimationFrame(() => t.classList.add("show"));
+  setTimeout(() => {
+    t.classList.add("hide");
+    setTimeout(() => t.remove(), 700);
+  }, 4500);
+}
+
+let giftIdx = 0;
+$("giftBtn").addEventListener("click", () => {
+  showToast("من قلب نادر ليكي 🎀", GIFTS[giftIdx % GIFTS.length]);
+  giftIdx++;
+  launchConfetti(10);
+  vibrate(10);
+  playPop();
+});
+
+/* ═══════════ 14) التنقل ═══════════ */
+const navTargets = {
+  start:  () => document.querySelector(".love-heart-section"),
+  heart:  () => document.querySelector(".love-heart-section"),
+  photos: () => document.querySelector(".section-title"),
+  cake:   () => document.querySelector(".cake-section")
+};
+document.querySelectorAll(".nav-pill").forEach(pill => {
+  pill.addEventListener("click", () => {
+    document.querySelectorAll(".nav-pill").forEach(p => p.classList.remove("active"));
+    pill.classList.add("active");
+    const target = navTargets[pill.dataset.goto] && navTargets[pill.dataset.goto]();
+    if (target) target.scrollIntoView({ behavior:"smooth", block:"center" });
+    vibrate(8);
+  });
+});
+
+/* ═══════════ 15) الأصوات ═══════════ */
+let actx = null;
+function audioCtx() {
+  if (!actx) try { actx = new (window.AudioContext||window.webkitAudioContext)(); } catch(e){}
+  return actx;
+}
+function tone(freq, dur, vol, delay=0, type="sine") {
+  const a = audioCtx(); if (!a) return;
+  const o = a.createOscillator(), g = a.createGain();
+  o.type = type; o.frequency.value = freq;
+  g.gain.setValueAtTime(0, a.currentTime+delay);
+  g.gain.linearRampToValueAtTime(vol, a.currentTime+delay+.02);
+  g.gain.exponentialRampToValueAtTime(.001, a.currentTime+delay+dur);
+  o.connect(g).connect(a.destination);
+  o.start(a.currentTime+delay); o.stop(a.currentTime+delay+dur+.05);
+}
+function playPop()    { tone(880, .09, .08); tone(1320, .07, .05, .03); }
+function playSuccess(){ [523,659,784,1046].forEach((f,i) => tone(f, .3, .1, i*.09)); }
+function playError()  { tone(220, .18, .1, 0, "triangle"); tone(180, .2, .09, .12, "triangle"); }
+function playChime()  { [523.25,659.25,783.99,1046.5].forEach((f,i) => tone(f, 1.1, .14, i*.15)); }
+
+function vibrate(pattern) {
+  try { navigator.vibrate && navigator.vibrate(pattern); } catch(e){}
+}
+
+/* ═══════════ 16) لمسات إضافية ═══════════ */
+setInterval(() => {
+  if (!$("galleryScreen").classList.contains("hidden")) launchConfetti(3);
+}, 15000);
+
+try {
+  const today = new Date();
+  const bd = new Date(BIRTHDAY+"T00:00:00");
+  if (today.getMonth() === bd.getMonth() && today.getDate() === bd.getDate()) {
+    setInterval(() => launchConfetti(8), 6000);
+    setTimeout(() => showToast("🎉 النهاردة يومك!", "كل سنة وانتي طيبة يا بسملة 🤍🎂"), 3000);
+  }
+} catch(e) {}
+
+let lastTouchEnd = 0;
+document.addEventListener("touchend", e => {
+  const now = Date.now();
+  if (now - lastTouchEnd <= 300) e.preventDefault();
+  lastTouchEnd = now;
+}, false);
+
+lockScreen.addEventListener("touchstart", e => { touchStartY = e.touches[0].clientY; }, { passive:true });
+let touchStartY = 0;
+lockScreen.addEventListener("touchend", e => {
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  if (dy < -60 && passwordBox.style.display !== "block") openNotification();
+}, { passive:true });
+
+console.log("%c💗 موقع بسملة — Black Glass Pro — بحبك يا بسملة", "color:#ff4d94;font-size:16px;font-weight:bold;");
+</script>
+</body>
+</html>
